@@ -7,7 +7,6 @@ Ce projet contient un job MapReduce qui calcule le total des ventes par ville à
 - `TotalVentesParVille.java` : Code source du job MapReduce
 - `pom.xml` : Configuration Maven pour la construction du projet
 - `docker-compose.yml` : Configuration des services Hadoop (HDFS, YARN, etc.)
-- `setup.sh` : Script de configuration de l'environnement Hadoop
 - `ventes.txt` : Fichier exemple de données de vente
 
 ## Format des Données
@@ -43,27 +42,14 @@ Ou via la ligne de commande :
 mvn clean package
 ```
 
-### 3. Démarrage de l'Environnement Hadoop
 
-Exécutez le script de configuration :
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-Ce script :
-- Vérifie les prérequis
-- Démarre les conteneurs Docker pour Hadoop
-- Crée le fichier d'exemple ventes.txt
-- Charge les données dans HDFS
-
-### 4. Exécution du Job MapReduce
+### 3. Exécution du Job MapReduce
 
 ```bash
 docker exec -it hadoop-client hadoop jar /app/hadoop-ventes-par-ville-1.0-SNAPSHOT.jar TotalVentesParVille /input/ventes.txt /output
 ```
 
-### 5. Affichage des Résultats
+### 4. Affichage des Résultats
 
 ```bash
 docker exec -it hadoop-client hadoop fs -cat /output/part-r-00000
@@ -76,12 +62,12 @@ Marseille    2099.98
 Paris    1709.95
 ```
 
-### 6. Interfaces Web
+### 5. Interfaces Web
 
 - NameNode HDFS : http://localhost:9870
 - ResourceManager YARN : http://localhost:8088
 
-### 7. Arrêt de l'Environnement
+### 6. Arrêt de l'Environnement
 
 ```bash
 docker-compose down
