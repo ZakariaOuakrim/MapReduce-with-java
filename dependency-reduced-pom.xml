@@ -18,7 +18,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>WordCount</mainClass>
+                  <mainClass>TotalVentesParVille</mainClass>
                 </transformer>
               </transformers>
             </configuration>
