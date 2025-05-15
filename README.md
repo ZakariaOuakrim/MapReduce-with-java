@@ -11,7 +11,7 @@ Ce projet contient un job MapReduce qui calcule le total des ventes par ville à
 
 ## Format des Données
 
-Le fichier d'entrée `ventes.txt` contient des lignes au format suivant :
+Le fichier d'entrée `data.txt` contient des lignes au format suivant :
 ```
 date ville produit prix
 ```
